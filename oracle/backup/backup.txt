@@ -1,0 +1,18 @@
+rem ====================
+rem ==  start backup
+rem ====================
+expdp smartup/smartup@xe schemas=SMARTUP directory=SMARTUP_BACKUP dumpfile=smartup_backup.dmp logfile=expdpSMARTUP.log
+chcp 1251
+set day=%DATE:~0,2%
+set month=%DATE:~3,2%
+set year=%DATE:~6,4%
+rem ====================
+rem ==  pack zip
+rem ====================
+cd d:\SERVER\oracle\oradata\backup\
+zip d:\SERVER\oracle\oradata\backup\smartup_%year%%month%%day%.zip  d:\SERVER\oracle\oradata\backup\smartup_backup.dmp
+rem ====================
+rem ==  delete files
+rem ====================
+del d:\SERVER\oracle\oradata\backup\expdpSMARTUP.log
+del d:\SERVER\oracle\oradata\backup\SMARTUP_BACKUP.DMP
