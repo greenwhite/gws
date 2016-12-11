@@ -10,7 +10,7 @@ rem ====================
 rem ==  pack zip
 rem ====================
 cd d:\SERVER\oracle\oradata\backup\
-zip d:\SERVER\oracle\oradata\backup\smartup_%year%%month%%day%.zip  d:\SERVER\oracle\oradata\backup\smartup_backup.dmp
+zip d:\SERVER\oracle\oradata\backup\smartup_%year%%month%%day%.zip  d:\SERVER\oracle\oradata\backup\SMARTUP_BACKUP.dmp
 rem ====================
 rem ==  delete files
 rem ====================
